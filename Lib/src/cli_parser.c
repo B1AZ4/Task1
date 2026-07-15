@@ -11,6 +11,11 @@
 #include <ctype.h>
 
 int hex_decode(const char *hex_str, uint8_t **out, size_t *out_len) {
+    if (hex_str == NULL) {
+        *out = NULL;
+        *out_len = 0;
+        return 0;
+    }
     size_t len = strlen(hex_str);
 
     if (len % 2 != 0) return -1;
