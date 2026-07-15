@@ -23,6 +23,13 @@ int main(int argc, char *argv[]) {
     const char *pattern_hex = argv[3];
     const char *replacement_hex = argv[4];
 
+    FILE* test = fopen(input_file, "rb");
+    if (!test) {
+        fprintf(stderr, "Error: cannot open input file '%s'\n", input_file);
+        return 1;
+    }
+    fclose(test);
+
     uint8_t *pattern = NULL;
     uint8_t *replacement = NULL;
     size_t pattern_len, replacement_len;
