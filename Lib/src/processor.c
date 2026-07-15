@@ -37,6 +37,16 @@ size_t partial_match_length(const uint8_t *data, size_t data_len,
 int process_file(const char* input_path, const char* output_path,
     const uint8_t* pattern, size_t pattern_len,
     const uint8_t* replacement, size_t replacement_len) {
+    if (pattern_len == 0) {
+        fprintf(stderr, "Error: pattern length cannot be zero\n");
+        return 1;
+    }
+
+    if (pattern_len > 2 * BLOCK_SIZE) {
+        fprintf(stderr, "Error: pattern length (%zu) exceeds 2*N (%d)\n",
+            pattern_len, 2 * BLOCK_SIZE);
+        return 1;
+    }
 
     FILE* fin = fopen(input_path, "rb");
     if (!fin) {
