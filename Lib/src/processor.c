@@ -6,6 +6,7 @@
 */
 #include "processor.h"
 #include <string.h>
+#include "buffer.h"
 #include <stdio.h>
 
 int find_pattern(const uint8_t *data, size_t data_len,
