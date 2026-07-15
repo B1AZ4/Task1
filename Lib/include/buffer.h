@@ -4,8 +4,6 @@ buffer.h - заголовочный файл модуля buffer.c
 Смоликов Роман
 МК-101
 */
-#pragma once
-
 #ifndef BUFFER_H
 #define BUFFER_H
 
