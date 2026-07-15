@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 4.0)
+cmake_minimum_required(VERSION 3.15)
 project(Test1)
 
 option(BUILD_SHARED_LIBS "Build shared libraries" OFF)
